@@ -5,6 +5,9 @@ const app = express();
 
 connectDB();
 
+// Init Middleware to allow us to parse req.body
+app.use(express.json({ extended: false }));
+
 app.get('/', (req, res) => {
   res.json({ msg: 'API running' });
 });
